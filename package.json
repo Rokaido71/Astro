@@ -1,0 +1,30 @@
+{
+  "name": "astro-local",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test test/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/build.mjs",
+    "start": "electron .",
+    "doctor": "node scripts/doctor.mjs",
+    "licenses": "node scripts/licenses.mjs",
+    "audit:public": "node scripts/audit-public.mjs"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "@electron/packager": "20.3.0",
+    "electron": "44.4.5"
+  },
+  "main": "desktop/main.mjs",
+  "dependencies": {
+    "@discordjs/rest": "2.6.3",
+    "@discordjs/ws": "2.0.4",
+    "discord-api-types": "0.38.56"
+  },
+  "license": "MIT",
+  "author": "Rokaido71"
+}

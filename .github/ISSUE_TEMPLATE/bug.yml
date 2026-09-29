@@ -1,0 +1,32 @@
+name: Signaler un bug
+description: Décrire un problème reproductible dans Astro.
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: "Ne joignez jamais de jeton Discord, de conversations privées ou de fichiers du dossier de données."
+  - type: input
+    id: version
+    attributes:
+      label: Version d’Astro et de Windows
+      placeholder: Version ou commit, version de Windows
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Étapes pour reproduire
+      description: Décrivez les actions et le résultat observé.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Résultat attendu
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Message d’erreur ou capture anonymisée
+      description: Masquez les noms, identifiants et contenus privés avant de publier.

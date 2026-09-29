@@ -1,0 +1,16 @@
+import fs from 'node:fs';import path from 'node:path';import {randomUUID,createHash} from 'node:crypto';import {execFileSync} from 'node:child_process';import {pathToFileURL} from 'node:url';import {packager} from '@electron/packager';
+const root=path.resolve(import.meta.dirname,'..'),staging=path.join(root,'.build','public-'+randomUUID()),stage=path.join(staging,'input');fs.mkdirSync(stage,{recursive:true});
+const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex'),sourceFiles=[];
+function copy(relative){const file=path.join(root,relative),target=path.join(stage,relative),stat=fs.lstatSync(file);if(stat.isSymbolicLink())throw new Error('Symlink source refused');if(stat.isDirectory()){fs.mkdirSync(target,{recursive:true});for(const name of fs.readdirSync(file))copy(path.join(relative,name));}else{fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(file,target);sourceFiles.push({path:relative,sha256:sha(file)});}}
+for(const name of ['assets/brand/astro-logo-approved.png','assets/brand/astro-logo.png','assets/brand/astro-icon.png','assets/brand/astro.ico','assets/brand/README.md','desktop','lib','ui','scripts','TASK-BRIDGE.md','config.example.json','LICENSE','THIRD_PARTY.md','README.md','docs'])copy(name);
+for(const name of ['package.json','package-lock.json'])fs.copyFileSync(path.join(root,name),path.join(stage,name));
+const pkg=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8'));
+if(!process.env.npm_execpath)throw new Error('Use npm run build');
+execFileSync(process.execPath,[process.env.npm_execpath,'ci','--omit=dev','--ignore-scripts','--no-audit','--no-fund'],{cwd:stage,windowsHide:true,stdio:'pipe'});
+fs.writeFileSync(path.join(stage,'package.json'),JSON.stringify({name:pkg.name,version:pkg.version,private:true,type:'module',main:pkg.main,license:pkg.license,author:pkg.author,dependencies:pkg.dependencies},null,2));
+// Keep guide/controller accessible to the user's Codex task outside an archive.
+const [output]=await packager({dir:stage,out:path.join(staging,'output'),name:'Astro',platform:'win32',arch:'x64',electronVersion:pkg.devDependencies.electron,asar:false,prune:false,overwrite:false,icon:path.join(stage,'assets/brand/astro.ico'),win32metadata:{ProductName:'Astro',FileDescription:'Astro — tableau de bord',OriginalFilename:'Astro.exe'}});
+const app=path.join(output,'resources/app');for(const entry of sourceFiles)if(sha(path.join(app,entry.path))!==entry.sha256)throw new Error('Packaged source mismatch: '+entry.path);
+await import(pathToFileURL(path.join(app,'desktop/bot-guild-service.mjs')).href);
+const packagedFiles=[];function inventory(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(entry.isSymbolicLink())throw new Error('Symlink output refused');if(entry.isDirectory())inventory(file);else packagedFiles.push({path:path.relative(output,file),sha256:sha(file)});}}inventory(output);
+const report=path.join(staging,'build-sha256.json');fs.writeFileSync(report,JSON.stringify({verified:true,activated:false,asar:false,sourceFiles,packagedFiles},null,2));console.log(JSON.stringify({output,report,sourceFiles:sourceFiles.length,packagedFiles:packagedFiles.length,verified:true}));

@@ -1,0 +1,70 @@
+# Inventaire des dépendances
+
+Généré depuis package-lock.json et les manifestes installés par `npm run licenses`. Les licences des bibliothèques restent applicables ; la licence MIT du projet ne les remplace pas.
+
+| Paquet | Version | Licence déclarée | Usage |
+|---|---|---|---|
+| @discordjs/collection | 2.1.1 | Apache-2.0 | production |
+| @discordjs/rest | 2.6.3 | Apache-2.0 | production |
+| @discordjs/util | 1.2.0 | Apache-2.0 | production |
+| @discordjs/ws | 2.0.4 | Apache-2.0 | production |
+| @electron-internal/extract-zip | 1.0.5 | BSD-2-Clause | development |
+| @electron/asar | 4.3.0 | MIT | development |
+| @electron/get | 5.1.0 | MIT | development |
+| @electron/notarize | 3.1.1 | MIT | development |
+| @electron/osx-sign | 2.7.0 | BSD-2-Clause | development |
+| @electron/packager | 20.3.0 | BSD-2-Clause | development |
+| @electron/universal | 3.0.6 | MIT | development |
+| @electron/windows-sign | 2.1.0 | BSD-2-Clause | development |
+| @malept/cross-spawn-promise | 2.0.0 | Apache-2.0 | development |
+| @sapphire/async-queue | 1.5.5 | MIT | production |
+| @sapphire/snowflake | 3.5.5 | MIT | production |
+| @types/node | 24.13.6 | MIT | production |
+| @types/ws | 8.18.1 | MIT | production |
+| @vladfrangu/async_event_emitter | 2.4.7 | MIT | production |
+| @xmldom/xmldom | 0.9.12 | MIT | development |
+| balanced-match | 4.0.4 | MIT | development |
+| base64-js | 1.5.1 | MIT | development |
+| brace-expansion | 5.0.12 | MIT | development |
+| commander | 9.5.0 | MIT | development |
+| cross-spawn | 7.0.6 | MIT | development |
+| debug | 4.4.3 | MIT | development |
+| discord-api-types | 0.38.56 | MIT | production |
+| electron | 44.4.5 | MIT | development |
+| env-paths | 3.0.0 | MIT | development |
+| err-code | 2.0.3 | MIT | development |
+| filename-reserved-regex | 3.0.0 | MIT | development |
+| filenamify | 6.0.0 | MIT | development |
+| flora-colossus | 3.0.2 | MIT | development |
+| galactus | 2.0.2 | MIT | development |
+| glob | 13.0.6 | BlueOak-1.0.0 | development |
+| graceful-fs | 4.2.11 | ISC | development |
+| isbinaryfile | 4.0.10 | MIT | development |
+| isexe | 2.0.0 | ISC | development |
+| junk | 4.0.1 | MIT | development |
+| lru-cache | 11.5.3 | BlueOak-1.0.0 | development |
+| magic-bytes.js | 1.13.1 | MIT | production |
+| minimatch | 10.2.6 | BlueOak-1.0.0 | development |
+| minipass | 7.1.3 | BlueOak-1.0.0 | development |
+| ms | 2.1.3 | MIT | development |
+| path-key | 3.1.1 | MIT | development |
+| path-scurry | 2.0.2 | BlueOak-1.0.0 | development |
+| pe-library | 1.0.1 | MIT | development |
+| plist | 3.1.1 | MIT | development |
+| postject | 1.0.0-alpha.6 | MIT | development |
+| progress | 2.0.3 | MIT | development |
+| promise-retry | 2.0.1 | MIT | development |
+| resedit | 2.0.3 | MIT | development |
+| retry | 0.12.0 | MIT | development |
+| semver | 7.8.5 | ISC | development |
+| shebang-command | 2.0.0 | MIT | development |
+| shebang-regex | 3.0.0 | MIT | development |
+| sumchecker | 3.0.1 | Apache-2.0 | development |
+| tslib | 2.8.1 | 0BSD | production |
+| undici | 6.29.0 | MIT | production |
+| undici | 7.29.1 | MIT | development |
+| undici-types | 7.18.2 | MIT | production |
+| which | 2.0.2 | ISC | development |
+| ws | 8.22.0 | MIT | production |
+| xmlbuilder | 15.1.1 | MIT | development |
+| yargs-parser | 22.0.0 | ISC | development |
