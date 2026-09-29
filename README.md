@@ -2,7 +2,7 @@
 
 ![Windows](https://img.shields.io/badge/Windows-local-111111?style=flat-square) ![Node.js 22.12+](https://img.shields.io/badge/Node.js-22.12%2B-111111?style=flat-square) ![MIT](https://img.shields.io/badge/licence-MIT-111111?style=flat-square)
 
-Un bot Discord officiel relié à votre conversation Codex existante. Astro suit les salons autorisés, conserve leur contexte séparément et répond dans le salon d’origine. Le tableau de bord local permet d’observer, d’activer ou de tout mettre en pause.
+Application locale reliant Discord à une conversation Codex, avec détection événementielle et réponses contextualisées. La conversation Codex prend la forme d'un bot Discord officiel paramétrable depuis le Discord Developer Portal. Astro permet à la conversation Codex de suivre les salons autorisés, conserver leur contexte séparément et répondre dans le salon d’origine.
 
 [Installer](docs/installation.md) · [Utiliser](docs/usage.md) · [Architecture](docs/architecture.md) · [Compiler pour Windows](docs/build.md) · [Contribuer](CONTRIBUTING.md)
 
