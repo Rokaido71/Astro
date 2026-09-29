@@ -14,7 +14,7 @@ Astro ne crée pas une seconde session de modèle et n’utilise pas de clé API
 
 ## Version portable Windows x64
 
-Le paquet v0.2.0 est préparé pour une publication manuelle par le propriétaire. Consulter la [page des releases](https://github.com/Rokaido71/Astro/releases) pour les téléchargements effectivement publiés. Le paquet prévu est `Astro-v0.2.0-windows-x64.zip`, accompagné de `SHA256SUMS`. Extraire **tout** le ZIP puis lancer `Astro-win32-x64/Astro.exe`. Consulter les [instructions pour la version portable](docs/installation.md#version-portable-windows-x64) et les [notes de release](docs/RELEASE-v0.2.0.md).
+La [version v0.2.0 est disponible](https://github.com/Rokaido71/Astro/releases/tag/v0.2.0). Télécharger le [ZIP Windows x64](https://github.com/Rokaido71/Astro/releases/download/v0.2.0/Astro-v0.2.0-windows-x64.zip) et son [SHA256SUMS](https://github.com/Rokaido71/Astro/releases/download/v0.2.0/SHA256SUMS). Extraire **tout** le ZIP puis lancer `Astro-win32-x64/Astro.exe`. Consulter les [instructions pour la version portable](docs/installation.md#version-portable-windows-x64) et les [notes de release](docs/RELEASE-v0.2.0.md).
 
 ## Démarrer depuis les sources
 

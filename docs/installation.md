@@ -5,7 +5,7 @@ Node.js 22.12+ avec npm, Windows et une conversation locale dans Codex. Le CLI c
 
 ## Version portable Windows x64
 
-1. Une fois la version publiée par le propriétaire, télécharger `Astro-v0.2.0-windows-x64.zip` et `SHA256SUMS` depuis la [page des releases](https://github.com/Rokaido71/Astro/releases). Pour vérifier le téléchargement dans PowerShell : `Get-FileHash .\Astro-v0.2.0-windows-x64.zip -Algorithm SHA256`, puis comparer avec `SHA256SUMS`.
+1. Télécharger `Astro-v0.2.0-windows-x64.zip` et `SHA256SUMS` depuis la [release v0.2.0](https://github.com/Rokaido71/Astro/releases/tag/v0.2.0). Pour vérifier le téléchargement dans PowerShell : `Get-FileHash .\Astro-v0.2.0-windows-x64.zip -Algorithm SHA256`, puis comparer avec `SHA256SUMS`.
 2. Extraire **tout** le ZIP dans un dossier accessible en écriture. Garder `Astro.exe` avec ses ressources et notices, sans le déplacer seul ni le lancer depuis l’archive.
 3. Lancer `Astro-win32-x64/Astro.exe`. Le programme est **non signé** : Windows peut afficher un avertissement de provenance. Vérifier que le téléchargement vient de ce dépôt avant de l’exécuter. Aucun installateur ni service en arrière-plan n’est fourni.
 4. Créer et autoriser votre bot Discord comme décrit ci-dessous, puis renseigner le serveur, la conversation Codex et le jeton dans les Réglages locaux. Le jeton n’est jamais à fournir dans GitHub ou dans une conversation.
