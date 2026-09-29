@@ -2,7 +2,7 @@ import fs from 'node:fs';import path from 'node:path';import {randomUUID,createH
 const root=path.resolve(import.meta.dirname,'..'),staging=path.join(root,'.build','public-'+randomUUID()),stage=path.join(staging,'input');fs.mkdirSync(stage,{recursive:true});
 const sha=file=>createHash('sha256').update(fs.readFileSync(file)).digest('hex'),sourceFiles=[];
 function copy(relative){const file=path.join(root,relative),target=path.join(stage,relative),stat=fs.lstatSync(file);if(stat.isSymbolicLink())throw new Error('Symlink source refused');if(stat.isDirectory()){fs.mkdirSync(target,{recursive:true});for(const name of fs.readdirSync(file))copy(path.join(relative,name));}else{fs.mkdirSync(path.dirname(target),{recursive:true});fs.copyFileSync(file,target);sourceFiles.push({path:relative,sha256:sha(file)});}}
-for(const name of ['assets/brand/astro-logo-approved.png','assets/brand/astro-logo.png','assets/brand/astro-icon.png','assets/brand/astro.ico','assets/brand/README.md','desktop','lib','ui','scripts','TASK-BRIDGE.md','config.example.json','LICENSE','THIRD_PARTY.md','README.md','docs'])copy(name);
+for(const name of ['assets/brand/astro-logo-approved.png','assets/brand/astro-logo.png','assets/brand/astro-icon.png','assets/brand/astro-taskbar-white.png','assets/brand/astro.ico','assets/brand/README.md','desktop','lib','ui','scripts','TASK-BRIDGE.md','config.example.json','LICENSE','THIRD_PARTY.md','README.md','docs'])copy(name);
 for(const name of ['package.json','package-lock.json'])fs.copyFileSync(path.join(root,name),path.join(stage,name));
 const pkg=JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8'));
 if(!process.env.npm_execpath)throw new Error('Use npm run build');

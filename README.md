@@ -12,6 +12,10 @@ Windows, Node.js 22.12+ et un bot Discord personnel. L’intégration nécessite
 
 Astro ne crée pas une seconde session de modèle et n’utilise pas de clé API OpenAI. Les réponses utilisent les outils et les quotas de votre conversation Codex. Projet indépendant, non affilié à Discord ou OpenAI.
 
+## Version portable Windows x64
+
+Le paquet v0.2.0 est préparé pour une publication manuelle par le propriétaire. Consulter la [page des releases](https://github.com/Rokaido71/Astro/releases) pour les téléchargements effectivement publiés. Le paquet prévu est `Astro-v0.2.0-windows-x64.zip`, accompagné de `SHA256SUMS`. Extraire **tout** le ZIP puis lancer `Astro-win32-x64/Astro.exe`. Consulter les [instructions pour la version portable](docs/installation.md#version-portable-windows-x64) et les [notes de release](docs/RELEASE-v0.2.0.md).
+
 ## Démarrer depuis les sources
 
 ```powershell
@@ -35,7 +39,7 @@ Dans Réglages, renseignez votre serveur, votre conversation Codex et le jeton d
 
 Salons texte standards uniquement : pas de MP, fils ou forums, pas d’envoi de fichiers. Texte limité à 2 000 caractères. L’historique suivi est borné à 500 messages ; le rattrapage explicite à 100 messages sur 24 heures avec mention directe. Le journal bloque à 1 000 publications sans purge automatique. La pause interrompt le suivi ; les diagnostics demandés explicitement peuvent encore lire Discord.
 
-L’export public est testé avec des services simulés et une interface Electron isolée. Il ne garantit pas que votre version de Codex dispose de la commande nécessaire. Les builds sont des dossiers Windows de développement, non signés, sans installateur ni mise à jour automatique. Aucun téléchargement de release n’est annoncé dans ce dépôt.
+L’export public est testé avec des services simulés et une interface Electron isolée. Il ne garantit pas que votre version de Codex dispose de la commande nécessaire. Les builds sont des dossiers Windows de développement, non signés, sans installateur ni mise à jour automatique. Le paquet portable contient le dossier Windows complet ; les données utilisateur restent dans `%APPDATA%\Astro`.
 
 ## Licence
 

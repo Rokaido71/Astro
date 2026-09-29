@@ -3,6 +3,19 @@
 ## Prérequis
 Node.js 22.12+ avec npm, Windows et une conversation locale dans Codex. Le CLI choisi doit proposer `queue --thread --message`. Cette commande expérimentale est vérifiée sur certaines distributions locales seulement ; elle peut changer sans préavis. Aucun contournement par création automatique d’une nouvelle session n’est implémenté.
 
+## Version portable Windows x64
+
+1. Une fois la version publiée par le propriétaire, télécharger `Astro-v0.2.0-windows-x64.zip` et `SHA256SUMS` depuis la [page des releases](https://github.com/Rokaido71/Astro/releases). Pour vérifier le téléchargement dans PowerShell : `Get-FileHash .\Astro-v0.2.0-windows-x64.zip -Algorithm SHA256`, puis comparer avec `SHA256SUMS`.
+2. Extraire **tout** le ZIP dans un dossier accessible en écriture. Garder `Astro.exe` avec ses ressources et notices, sans le déplacer seul ni le lancer depuis l’archive.
+3. Lancer `Astro-win32-x64/Astro.exe`. Le programme est **non signé** : Windows peut afficher un avertissement de provenance. Vérifier que le téléchargement vient de ce dépôt avant de l’exécuter. Aucun installateur ni service en arrière-plan n’est fourni.
+4. Créer et autoriser votre bot Discord comme décrit ci-dessous, puis renseigner le serveur, la conversation Codex et le jeton dans les Réglages locaux. Le jeton n’est jamais à fournir dans GitHub ou dans une conversation.
+5. Depuis `Astro-win32-x64/resources/app`, exécuter `node scripts/doctor.mjs` avec Node.js 22.12+ pour vérifier le CLI Codex. Donner à votre conversation le chemin absolu du `TASK-BRIDGE.md` de ce même dossier et vos autorisations explicites. Les commandes du [guide d’utilisation](usage.md) s’exécutent également depuis ce dossier.
+6. Commencer par **Observer**, vérifier les salons, puis **Activer cette conversation**. Garder le PC éveillé, la connexion Internet, Astro et la conversation Codex disponibles. L’application redémarre en pause.
+
+Electron est inclus dans le ZIP : aucune compilation ni commande `npm ci` n’est nécessaire pour le lancer. Node.js reste requis pour le contrôleur et les diagnostics utilisés par votre conversation Codex. Les données sont conservées dans `%APPDATA%\Astro`, indépendamment du dossier extrait. « Portable » désigne ici une distribution sans installateur, pas un profil de données stocké à côté de l’exécutable.
+
+## Depuis les sources
+
 1. Cloner le dépôt, ouvrir PowerShell dans ce dossier et exécuter `npm ci`.
 2. Créer votre propre bot dans le [portail développeur Discord](https://discord.com/developers/applications). Activer **Message Content Intent**. Installer le bot sur votre serveur avec le scope `bot` et les permissions Voir le salon, Lire l’historique et Envoyer des messages (68608). Ne pas donner Administrateur ; exclure les salons privés avec les permissions Discord.
 3. Exécuter `npm start`. Renseigner le serveur et l’identifiant UUID de votre conversation Codex dans Réglages. Le salon de référence est facultatif ; tous les salons texte accessibles du serveur seront suivis.
